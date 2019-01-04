@@ -22,7 +22,7 @@ router.get('/your_path_needing_authentication', (req, res, next) => {
 });
 ```
 
-## Customization
+## Customization ✏️
 In addition to that, you can easily use your own messages or custom error properties. Let's expand the example from above:
 ```js
 router.get('/your_path_needing_authentication', (req, res, next) => {
@@ -55,9 +55,16 @@ res.jsonError(unauthorized(), forbidden(), notFound());
 ```
 3.
 ```js
-res.jsonError([unauthorized, forbidden(), notFound()]);
+res.jsonError([unauthorized(), forbidden(), notFound()]);
 ```
 4. 
 ```js
 res.jsonError(unauthorized(), [forbidden(), notFound()], notImplemented());
 ```
+
+## Participation and Contribution 🍻
+### We're actively looking for contributors!
+Want to participate in the project? 👇🏼  
+  - [Fork the project](https://github.com/welljsjs/api-response-nodejs/fork/) 🍴
+  - Create a Pull Request or an Issue to suggest modifications/extensions 🤝
+
