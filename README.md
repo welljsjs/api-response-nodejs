@@ -1,7 +1,27 @@
 # api-response-nodejs
 
+## Purpose 🤨
+This module can be used to standardize API error responses.
+
+Instead of having [_magic numbers_](https://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants) or strings in your code, this module will simplify to send errors: 
+
+_Before_:
+```js
+router.get('/custom_path', (req, res, next) => {
+  // This is really messy and confusing and can easily lead to typos.
+  res.status(403).send({ errors: [{ status: 403, detail: "You're not authorized" }] });
+});
+```
+_With this module_:
+```js
+router.get('/custom_path', (req, res, next) => {
+  // This is nicer to read and promises less typos.
+  res.jsonError(forbidden());
+});
+```
+
 ## How to use
-Before implementing or using your own custom rules, you need to use the _apiResponse_ middleware.
+Before implementing or using your own custom routes, you need to use the _apiResponse_ middleware.
 
 ```js
 const apiResponse = require('apiResponse');
