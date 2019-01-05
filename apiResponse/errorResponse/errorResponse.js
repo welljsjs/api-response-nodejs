@@ -7,14 +7,14 @@ function apiError(status, title, message, options) {
   return new APIError(status, title, message, options);
 }
 
-function jsonError(errors) {
+function apiResponse(errors) {
   return new APIErrorResponse(errors);
 }
 
 function jsonErrorResponse(res) {
   return function(errors) {
-    let apiResponse = jsonError([...arguments]);
-    return res.status(apiResponse.status).send(apiResponse.errors);
+    let apiResp = apiResponse([...arguments]);
+    return res.status(apiResp.status).send(apiResp.errors);
   };
 }
 

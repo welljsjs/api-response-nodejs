@@ -40,6 +40,7 @@ class APIError {
     this.detail = detail;
     if (options && options.pointer) this.pointer = options.pointer;
     if (options && options.parameter) this.parameter = options.parameter;
+    if (options && options.meta) this.meta = options.meta;
     // Ignore all other options.
   }
 }
