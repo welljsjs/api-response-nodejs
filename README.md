@@ -19,6 +19,24 @@ router.get('/custom_path', (req, res, next) => {
   res.jsonError(forbidden());
 });
 ```
+A JSON response might look like the following (optionally, it can contain more specified fields or even less, see below):
+
+```json
+{
+    "errors": [
+        {
+            "status": 403,
+            "title": "Forbidden",
+            "detail": "You don't have permission to access the requested resource on the server",
+            "source": {
+                "pointer": "/v1/animals/"
+            }
+        }
+    ]
+}
+```
+Errors will always be wrapped up as an array with the key '_errors_'.
+
 
 ## How to use
 Before implementing or using your own custom routes, you need to use the _apiResponse_ middleware.
